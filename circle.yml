@@ -1,0 +1,15 @@
+machine:
+  node:
+    version: 7
+  environment:
+    PATH: "${PATH}:${HOME}/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:${HOME}/${CIRCLE_PROJECT_REPONAME}/node_modules/.bin"
+
+test:
+  override:
+    - yarn run test
+
+experimental:
+  notify:
+    branches:
+      only:
+        - master
